@@ -1,0 +1,550 @@
+/* Estilos generales */
+body {
+    font-family: "", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+
+    font-family: "Golos Text", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
+
+/* Estilo del contador digital */
+/* Contador fijo en el encabezado de la página */
+#countdown-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(95, 223, 18, 1);
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del contador digital */
+#countdown-timer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    color: #000;
+    display: inline-block;
+    letter-spacing: 2px;
+}
+
+/* Estilo para cada dígito del contador */
+#countdown-timer span {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 2px;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* Estilo del texto adicional */
+#countdown-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #000;
+    margin-top: 5px;
+}
+
+#highlight {
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+
+
+
+
+
+/* Contenedor principal de imágenes */
+
+.image-container {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    margin: 5px 0 20px; /* Adjusted margin to account for the fixed timer */
+    width: 100%;
+    max-width: 1200px;
+}
+
+
+.image-container .image-wrapper h1 {
+    font-size: 45px;
+    margin-top: 120px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-container .image-wrapper h1 span {
+    color: rgb(255, 222, 0);
+    text-align: center;
+}
+
+
+.image-container h2 {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-container h2 span {
+    background-color: #000;
+    color: rgba(95, 223, 18, 1);
+    padding: 1px 1px;
+}
+
+.image-container img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+}
+
+/* Añadir fondo negro detrás de las imágenes */
+.image-wrapper {
+    width: 160%;
+    background-color: #000;
+    display: flex;
+   /* justify-content: center;*/
+    flex-direction: column; /* Cambiado a columna para que el botón esté debajo de la imagen */
+    align-items: center; /* Centrar la imagen y el botón horizontalmente */
+}
+
+.image-wrapper img {
+ /* Mantener la proporción de la imagen */
+    width: 45%;
+    height: 45%;
+    max-width: 100%;
+}
+
+
+
+
+/* Estilos del carrusel */
+.carousel-section {
+    text-align: center;
+    margin: 7px 0;
+    margin-bottom: 0px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.carousel-section h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.carousel-section h2 span {
+    background-color: #000;
+    color: rgba(95, 223, 18, 1);
+    padding: 5px 10px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* Estilos del botón de promoción */
+.promo-button {
+    background-color: rgba(95, 223, 18, 1);
+    color: #ffffff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 37px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 25px 0;
+    text-align: center;
+}
+
+
+
+
+.promo-button:hover {
+    background-color: #777777;
+    transform: scale(1.05);
+}
+
+/* Estilos del pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="tel"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.send-button {
+    background-color: rgba(95, 223, 18, 1);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.send-button:hover {
+    background-color: #7c7c7c;
+    transform: scale(1.05);
+}
+
+
+/*la parte de las imagenes de envío*/
+
+
+.container {
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+}
+
+.header-text {
+    margin-bottom: 20px;
+}
+
+.header-text p {
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.container .header-text span{
+    font-size: 40px;
+    color:  rgba(95, 223, 18, 1);
+}
+
+.partners {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.partner-row {
+    display: flex;
+    justify-content: center;
+}
+
+.partner-row img {
+    width: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+    margin: 2px;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.badges img {
+    width: 150px; /* Ajusta el tamaño de las insignias según sea necesario */
+    margin: 10px;
+    border-radius: 50%;
+}
+
+
+
+/*Footer Redes sociales*/
+.Redes-Sociales svg{
+    width: 40px;
+    height: 40px;
+}
+
+
+
+.Redes-Sociales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(95, 223, 18, 1);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.Redes-Sociales span {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.Container-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.Contacto li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contacto a {
+    color: #000;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Contacto a:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .Redes-Sociales span {
+        font-size: 20px;
+    }
+
+    .Contacto {
+        gap: 20px;
+    }
+
+    .Contacto a {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Redes-Sociales svg{
+        width: 25px;
+        height: 25px;
+    }
+    .Redes-Sociales span {
+        font-size: 18px;
+    }
+
+    .Contacto {
+        gap: 20px;
+    }
+
+    .Contacto a {
+        font-size: 20px;
+    }
+}
+
+/*----*/
+
+
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) {
+    /* Ajustes para tablets y dispositivos medianos */
+    .image-container h2 {
+        font-size: 28px;
+    }
+
+    .image-wrapper {
+        width: 100%; /* Mantén el fondo negro pero ajusta el ancho al 100% */
+    }
+
+    .carousel-section h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes para móviles */
+    .image-container h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .image-wrapper {
+        width: 400; /* Mantén el fondo negro pero ajusta el ancho al 100% */
+    }
+
+    .image-container img{
+        width: 415px;
+    } 
+
+    .image-container .image-wrapper h1{
+        font-size: 35px;
+    }
+
+    .carousel-section h2 {
+        font-size: 19px;
+    }
+
+    .carousel-section h2 span{
+        font-size: 19px;
+        padding: 1px 7px;
+    }
+
+    .container .header-text span{
+        font-size: 28px;
+        
+    }
+    
+
+    #countdown-timer {
+        font-size: 20px;
+        padding: 8px 0;
+    }
+
+    #countdown-text {
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .promo-button, .send-button {
+        font-size: 20px;
+        padding: 12px 20px;
+        margin: 7px 0px 16px 0px;
+    }
+}
+
+
+
+/*media querie para envios*/
+
+/* Media Queries para diseño responsive */
+@media (max-width: 768px) {
+    .header-text p {
+        font-size: 18px;
+    }
+
+    .partner-row img, .badges img {
+        width: 150px; /* Ajusta el tamaño de las imágenes para pantallas más pequeñas */
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-text p {
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    .partner-row img, .badges img {
+        width: 120px; /* Ajusta el tamaño de las imágenes para pantallas muy pequeñas */
+        margin: 5px;
+    }
+
+    .badges img {
+        width: 70px; /* Ajusta el tamaño de las insignias según sea necesario */
+        margin: 3px;
+        border-radius: 50%;
+    }
+    
+}
