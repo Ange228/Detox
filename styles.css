@@ -512,6 +512,14 @@ input[type="text"], input[type="tel"] {
         padding: 12px 20px;
         margin: 7px 0px 16px 0px;
     }
+
+    /*formulario*/
+    .popup-content{
+        padding: 8px;
+        max-width: 350px;
+    }
+    /*-------*/
+    
 }
 
 
