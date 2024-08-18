@@ -29,37 +29,38 @@ function updateCarousel() {
     document.querySelector('.carousel-images').style.transform = `translateX(${translateX}%)`;
 }
 
+
+
+
+
 // Mostrar el pop-up al hacer clic en el botón "QUIERO LA PROMOCIÓN"
 document.getElementById('promoButton').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-
+    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
 });
 
-
-//
-
+// Mostrar el pop-up al hacer clic en el botón "QUIERO MI DETOX PLUS" (botón 1)
 document.getElementById('promoButton1').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-
+    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
 });
 
+// Mostrar el pop-up al hacer clic en el botón "QUIERO MI DETOX PLUS" (botón 2)
 document.getElementById('promoButton2').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-
+    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
 });
 
+// Mostrar el pop-up al hacer clic en el botón "QUIERO MI DETOX PLUS" (botón 3)
 document.getElementById('promoButton3').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-
+    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
 });
-
-
-//
-
 
 // Cerrar el pop-up al hacer clic en la 'X'
 document.getElementById('closePopup').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'none';
+    document.getElementById('countdown-container').style.display = 'block'; // Mostrar el contador de nuevo
 });
 
 // Cerrar el pop-up al hacer clic fuera del contenido del formulario
@@ -67,8 +68,12 @@ window.addEventListener('click', function(event) {
     const popup = document.getElementById('promoPopup');
     if (event.target === popup) {
         popup.style.display = 'none';
+        document.getElementById('countdown-container').style.display = 'block'; // Mostrar el contador de nuevo
     }
 });
+
+
+
 
 
 // Enviar el formulario a WhatsApp al hacer clic en el botón "Enviar"
