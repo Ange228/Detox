@@ -475,7 +475,7 @@ input[type="text"], input[type="tel"] {
     }
 
     .image-container img{
-        width: 415px;
+        width: 100%;
     } 
 
     .image-container .image-wrapper h1{
