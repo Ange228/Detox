@@ -11,30 +11,29 @@ fbq('init', '1532960383914242');
 fbq('track', 'PageView');
 // Fin del código Meta Pixel
 
-// Resto de tu código JavaScript
+// Resto de js
 
-// Índice inicial para el carrusel
+// Índice carrusel
 let currentIndex = 0;
 
-// Seleccionar todas las imágenes del carrusel
+// Seleccion imágenes del carrusel
 const images = document.querySelectorAll('.carousel-images img');
 
-// Número total de imágenes en el carrusel
+// Número imágenes carrusel
 const totalImages = images.length;
 
-// Evento para el botón "Siguiente"
+// Evento botón "Siguiente"
 document.getElementById('nextBtn').addEventListener('click', function() {
-    // Incrementar el índice y usar el módulo para ciclar de vuelta al inicio
     currentIndex = (currentIndex + 1) % totalImages;
     updateCarousel();
 });
 
-// Evento para el botón "Anterior"
+// Evento botón "Anterior"
 document.getElementById('prevBtn').addEventListener('click', function() {
-    // Decrementar el índice y usar el módulo para ciclar al final si es necesario
     currentIndex = (currentIndex - 1 + totalImages) % totalImages;
     updateCarousel();
 });
+
 
 // Función para actualizar la posición del carrusel
 function updateCarousel() {
@@ -48,42 +47,42 @@ function updateCarousel() {
 
 
 
-// Mostrar el pop-up al hacer clic en el botón "QUIERO LA PROMOCIÓN"
+// Mostrar el pop-up clic en el botón "QUIERO LA PROMOCIÓN"
 document.getElementById('promoButton').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
+    document.getElementById('countdown-container').style.display = 'none'; // Ocultar contador al abrir por up
 });
 
 // Mostrar el pop-up al hacer clic en el botón "QUIERO MI DETOX PLUS" (botón 1)
 document.getElementById('promoButton1').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
+    document.getElementById('countdown-container').style.display = 'none';
 });
 
 // Mostrar el pop-up al hacer clic en el botón "QUIERO MI DETOX PLUS" (botón 2)
 document.getElementById('promoButton2').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
+    document.getElementById('countdown-container').style.display = 'none';
 });
 
 // Mostrar el pop-up al hacer clic en el botón "QUIERO MI DETOX PLUS" (botón 3)
 document.getElementById('promoButton3').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'flex';
-    document.getElementById('countdown-container').style.display = 'none'; // Ocultar el contador
+    document.getElementById('countdown-container').style.display = 'none'; 
 });
 
-// Cerrar el pop-up al hacer clic en la 'X'
+// Cerrar pop-up
 document.getElementById('closePopup').addEventListener('click', function() {
     document.getElementById('promoPopup').style.display = 'none';
-    document.getElementById('countdown-container').style.display = 'block'; // Mostrar el contador de nuevo
+    document.getElementById('countdown-container').style.display = 'block'; 
 });
 
-// Cerrar el pop-up al hacer clic fuera del contenido del formulario
+// cerrar formulario al hacer click afuera de este
 window.addEventListener('click', function(event) {
     const popup = document.getElementById('promoPopup');
     if (event.target === popup) {
         popup.style.display = 'none';
-        document.getElementById('countdown-container').style.display = 'block'; // Mostrar el contador de nuevo
+        document.getElementById('countdown-container').style.display = 'block'; // volver abrir contador
     }
 });
 
@@ -93,9 +92,9 @@ window.addEventListener('click', function(event) {
 
 // Enviar el formulario a WhatsApp al hacer clic en el botón "Enviar"
 document.getElementById('promoForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevenir el envío por defecto del formulario
+    event.preventDefault(); 
 
-    // Obtener los valores de los campos del formulario
+    //alores de los campos del formulario
     const city = document.getElementById('city').value;
     const district = document.getElementById('district').value;
     const direction = document.getElementById('direction').value;
@@ -114,7 +113,7 @@ document.getElementById('promoForm').addEventListener('submit', function(event) 
 
 
 // Definir la duración del contador en minutos y segundos
-let timerDuration = 15 * 60; // 15 minutos en segundos
+let timerDuration = 15 * 60; 
 
 // Obtener los elementos donde se mostrarán las horas, minutos y segundos
 const hoursElement = document.getElementById('hours');
@@ -123,7 +122,7 @@ const secondsElement = document.getElementById('seconds');
 
 // Función que actualiza el contador
 function updateTimer() {
-    // Calcular las horas, minutos y segundos restantes
+    // Calcular las horas, minutos y segundos 
     const hours = Math.floor(timerDuration / 3600);
     const minutes = Math.floor((timerDuration % 3600) / 60);
     const seconds = timerDuration % 60;
@@ -145,5 +144,5 @@ function updateTimer() {
     }
 }
 
-// Iniciar el contador
+//contador inciar
 const timerInterval = setInterval(updateTimer, 1000);
